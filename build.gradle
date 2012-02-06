@@ -1,0 +1,28 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'org.gradle.api.plugins:gradle-android-plugin:1.1.0'
+  }
+}
+apply plugin: 'android'
+apply plugin: 'eclipse'
+repositories {
+  mavenCentral()
+}
+// Sets the package version
+version = "0.0.1"
+
+// Configure the filtering of resources with properties from the Gradle's project scope (2)
+processResources {
+  expand (project.properties)
+}
+// Configure a dedicated debug build (3)
+task configureDebug << {
+  jar.classifier = "debug"
+}
+// Configure a dedicated release build (4)
+task configureRelease << {
+  proguard.enabled = true
+}

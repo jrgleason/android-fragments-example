@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScheduleActivity</string>
+    <string name="calander_prompt">Select Calendar To Add</string>
+    <string name="bar_tab_text">Bars</string>
+    <color name="white">#FFFFFF</color>
+</resources>
