@@ -1,11 +1,25 @@
 package com.gleason.apa.model;
 
+import android.net.Uri;
+import android.provider.BaseColumns;
+
+import com.gleason.apa.model.data.PlayerContentProvider;
+import com.gleason.apa.model.data.TeamContentProvider;
 import com.gleason.apa.model.enums.Ranking;
+import com.gleason.apa.model.util.Util;
 
 public class Player {
+	public static final class Players implements BaseColumns {
+		public static final Uri CONTENT_URI = Uri.parse("content://"
+				+ Util.AUTHORITY + "/" + PlayerContentProvider.TABLE_NAME);
+		public static final String CONTENT_TYPE = "apashooter/player";
+		public static final String ID = "_id";
+		public static final String NAME = "name";
+		public static final String RANKING = "ranking";
+	}
+	
 	private int id;
 	private String name;
-	private Team team;
 	private Ranking rank;
 	public int getId() {
 		return id;
@@ -19,12 +33,7 @@ public class Player {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Team getTeam() {
-		return team;
-	}
-	public void setTeam(Team team) {
-		this.team = team;
-	}
+ 
 	public Ranking getRank() {
 		return rank;
 	}

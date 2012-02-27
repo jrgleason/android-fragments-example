@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team Name" />
+		<EditText
+		    android:id="@+id/team_name"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:inputType="text"
+            android:hint="Name"
+        	/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team Number" />
+        <EditText
+            android:id="@+id/team_number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:inputType="text"
+            android:hint="Team Number"/>
+    </LinearLayout>
+	<Button
+	    android:id="@+id/submitTeam"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:text="Add Team"/>
+</LinearLayout>

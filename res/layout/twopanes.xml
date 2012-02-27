@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+    <fragment android:id="@+id/bar_container"
+              android:layout_height="fill_parent"
+              android:name="com.gleason.apa.fragment.BarListFragment"
+              android:layout_width="400dp"
+              android:layout_marginRight="10dp"/>
+    <fragment android:id="@+id/bar_edit"
+              android:layout_height="fill_parent"
+              android:name="com.gleason.apa.fragment.BarEditFragment"
+              android:layout_width="fill_parent" />
+</LinearLayout>

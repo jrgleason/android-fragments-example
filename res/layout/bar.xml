@@ -2,41 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bar Name" />
-		<EditText
-		    android:id="@+id/barName"
-        	android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
-        	/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address" />
-
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-	<Button
-	    android:id="@+id/submitBar"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:text="Add Game"/>
+    android:orientation="horizontal" >
+	<fragment android:name="com.gleason.apa.fragment.BarListFragment"
+            android:id="@+id/bar_list_fragment"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+	<fragment android:name="com.gleason.apa.fragment.BarEditFragment"
+            android:id="@+id/bar_edit_fragment"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
 </LinearLayout>

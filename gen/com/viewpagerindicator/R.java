@@ -8,6 +8,9 @@
 package com.viewpagerindicator;
 
 public final class R {
+    public static final class array {
+        public static final int action_list=0x7f0a0000;
+    }
     public static final class attr {
         /**  Whether or not the indicators should be centered. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -139,20 +142,6 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int radius=0x7f010008;
-        /** <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>start</code></td><td>1</td><td></td></tr>
-<tr><td><code>middle</code></td><td>2</td><td></td></tr>
-<tr><td><code>end</code></td><td>3</td><td></td></tr>
-<tr><td><code>marquee</code></td><td>4</td><td></td></tr>
-</table>
-         */
-        public static final int screen=0x7f010019;
         /**  Whether or not the selected item is displayed as bold. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -270,6 +259,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int default_circle_indicator_centered=0x7f060000;
         public static final int default_circle_indicator_snap=0x7f060001;
         public static final int default_title_indicator_selected_bold=0x7f060002;
+        public static final int has_two_panes=0x7f060003;
     }
     public static final class color {
         public static final int default_circle_indicator_fill_color=0x7f050008;
@@ -328,26 +318,42 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class id {
         public static final int addmatch=0x7f040011;
-        public static final int address=0x7f04000a;
-        public static final int barName=0x7f040009;
-        public static final int block_title=0x7f040016;
+        public static final int bar_address=0x7f040008;
+        public static final int bar_address_list=0x7f04000b;
+        public static final int bar_container=0x7f040015;
+        public static final int bar_edit=0x7f040027;
+        public static final int bar_edit_fragment=0x7f040006;
+        public static final int bar_list_fragment=0x7f040005;
+        public static final int bar_name=0x7f040007;
+        public static final int bar_name_list=0x7f04000a;
+        public static final int block_title=0x7f04001e;
         public static final int calanderSelector=0x7f04000c;
+        public static final int create=0x7f040028;
         public static final int description=0x7f040010;
-        public static final int end=0x7f040007;
+        public static final int edit_container=0x7f040012;
         public static final int horizontal=0x7f040000;
-        public static final int indicator=0x7f040012;
-        public static final int indicator_left=0x7f040015;
-        public static final int indicator_right=0x7f040017;
-        public static final int mainpager=0x7f040013;
-        public static final int marquee=0x7f040008;
-        public static final int middle=0x7f040006;
+        public static final int indicator=0x7f040013;
+        public static final int indicator_left=0x7f04001d;
+        public static final int indicator_right=0x7f04001f;
+        public static final int mainpager=0x7f040014;
         public static final int none=0x7f040002;
         public static final int pickStartDate=0x7f04000d;
-        public static final int start=0x7f040005;
+        public static final int player_edit_fragment=0x7f040017;
+        public static final int player_list_fragment=0x7f040016;
+        public static final int player_name=0x7f040018;
+        public static final int player_name_list=0x7f04001b;
+        public static final int player_ranking=0x7f040019;
+        public static final int player_ranking_list=0x7f04001c;
         public static final int startDateDisplay=0x7f04000e;
-        public static final int submitBar=0x7f04000b;
-        public static final int tab_1=0x7f040018;
-        public static final int text=0x7f040014;
+        public static final int submitBar=0x7f040009;
+        public static final int submitPlayer=0x7f04001a;
+        public static final int submitTeam=0x7f040024;
+        public static final int team_edit_fragment=0x7f040021;
+        public static final int team_list_fragment=0x7f040020;
+        public static final int team_name=0x7f040022;
+        public static final int team_name_list=0x7f040025;
+        public static final int team_number=0x7f040023;
+        public static final int team_number_list=0x7f040026;
         public static final int title=0x7f04000f;
         public static final int triangle=0x7f040003;
         public static final int underline=0x7f040004;
@@ -359,17 +365,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class layout {
         public static final int bar=0x7f030000;
-        public static final int calendar_event=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int tab=0x7f030003;
-        public static final int tab_container_fragment=0x7f030004;
-        public static final int tabs=0x7f030005;
-        public static final int vpi__tab=0x7f030006;
+        public static final int bar_edit=0x7f030001;
+        public static final int bar_list=0x7f030002;
+        public static final int blank=0x7f030003;
+        public static final int calendar_event=0x7f030004;
+        public static final int edit_activity=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int main_layout=0x7f030011;
+        public static final int onepane=0x7f030007;
+        public static final int player=0x7f030008;
+        public static final int player_edit=0x7f030009;
+        public static final int player_list=0x7f03000a;
+        public static final int tab_container_fragment=0x7f03000b;
+        public static final int team=0x7f03000c;
+        public static final int team_edit=0x7f03000d;
+        public static final int team_list=0x7f03000e;
+        public static final int twopanes=0x7f03000f;
+        public static final int vpi__tab=0x7f030010;
+    }
+    public static final class menu {
+        public static final int options_menu=0x7f0c0000;
     }
     public static final class string {
-        public static final int app_name=0x7f0a0000;
-        public static final int bar_tab_text=0x7f0a0002;
-        public static final int calander_prompt=0x7f0a0001;
+        public static final int app_name=0x7f0b0000;
+        public static final int bar_tab_text=0x7f0b0002;
+        public static final int calander_prompt=0x7f0b0001;
     }
     public static final class style {
         public static final int TextAppearance_TabPageIndicator=0x7f090006;

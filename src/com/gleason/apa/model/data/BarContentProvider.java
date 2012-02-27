@@ -1,6 +1,5 @@
 package com.gleason.apa.model.data;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 
 import com.gleason.apa.model.Bar.Bars;
@@ -18,11 +17,9 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.util.Log;
 
-public class BarContentProvider extends ContentProvider {
-	private static final String DATABASE_NAME = "apashooter.db";
+public class BarContentProvider extends ContentProvider{
 	public static final String TABLE_NAME = "bar";
-	public static final String AUTHORITY = "com.gleason.apa.model.data.providers.BarContentProvider";
-	private static final int DATABASE_VERSION = 1;
+	public static Uri CONTENT_PROVIDER_URI;
 	private static final int BARS = 1;
 	private static final UriMatcher sUriMatcher;
 	private static HashMap<String, String> barsProjectionMap;
@@ -31,10 +28,14 @@ public class BarContentProvider extends ContentProvider {
 		Bars.NAME,
 		Bars.ADDRESS
 	};
+	public static final String[] PROJECTION_MAP_NO_ID= {
+		Bars.NAME,
+		Bars.ADDRESS
+	};
 	
 	private static class DatabaseHelper extends SQLiteOpenHelper {
 		DatabaseHelper(Context context) {
-			super(context, DATABASE_NAME, null, DATABASE_VERSION);
+			super(context, Util.DATABASE_NAME, null, Util.DATABASE_VERSION);
 		}
 
 		@Override
@@ -152,7 +153,7 @@ public class BarContentProvider extends ContentProvider {
 
 	static {
 		sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-		sUriMatcher.addURI(AUTHORITY, TABLE_NAME, BARS);
+		sUriMatcher.addURI(Util.AUTHORITY, TABLE_NAME, BARS);
 		
 		barsProjectionMap = new HashMap<String, String>();
         barsProjectionMap.put(Bars.ID, Bars.ID);
