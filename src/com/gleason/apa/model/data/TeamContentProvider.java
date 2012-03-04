@@ -84,7 +84,7 @@ public class TeamContentProvider extends ContentProvider {
 			break;
 
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return null;
 		}
 
 		SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -101,14 +101,14 @@ public class TeamContentProvider extends ContentProvider {
 		case TEAMS:
 			return Teams.CONTENT_TYPE;
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return null;
 		}
 	}
 
 	@Override
 	public Uri insert(Uri uri, ContentValues initialValues) {
 		if (sUriMatcher.match(uri) != TEAMS) {
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return null;
 		}
 
 		ContentValues values;
@@ -137,7 +137,7 @@ public class TeamContentProvider extends ContentProvider {
 			count = db.delete(TABLE_NAME, where, whereArgs);
 			break;
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return -1;
 		}
 		getContext().getContentResolver().notifyChange(uri, null);
 		return count;
@@ -154,7 +154,7 @@ public class TeamContentProvider extends ContentProvider {
 			break;
 
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return -1;
 		}
 
 		getContext().getContentResolver().notifyChange(uri, null);

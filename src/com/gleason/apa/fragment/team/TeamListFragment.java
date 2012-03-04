@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.gleason.apa.R;
+import com.gleason.apa.fragment.BaseListFragment;
 import com.gleason.apa.model.Team.Teams;
 import com.gleason.apa.model.data.TeamContentProvider;
 
@@ -17,7 +18,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-public class TeamListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor>{
+public class TeamListFragment extends BaseListFragment implements LoaderManager.LoaderCallbacks<Cursor>{
 	Set<OnTeamSelectedListener> listeners = 
 			new HashSet<TeamListFragment.OnTeamSelectedListener>();
 	

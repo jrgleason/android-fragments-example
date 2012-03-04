@@ -23,7 +23,7 @@ public class PlayerFragment extends Fragment implements OnPlayerSelectedListener
 	public static PlayerFragment newInstance(){
 		return new PlayerFragment();
 	}
-		
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

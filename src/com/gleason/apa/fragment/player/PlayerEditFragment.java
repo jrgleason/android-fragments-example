@@ -1,6 +1,7 @@
 package com.gleason.apa.fragment.player;
 
 import com.gleason.apa.R;
+import com.gleason.apa.fragment.BaseEditFragment;
 import com.gleason.apa.fragment.player.PlayerEditFragment;
 import com.gleason.apa.model.Player;
 import com.gleason.apa.model.Player.Players;
@@ -19,7 +20,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class PlayerEditFragment extends Fragment {
+public class PlayerEditFragment extends BaseEditFragment {
 	public static final String UPDATE_FLAG = "update";
 	public static final String TEAM_ID_FLAG = "playerid";
 	private EditText name;

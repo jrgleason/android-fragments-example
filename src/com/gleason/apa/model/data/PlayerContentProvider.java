@@ -102,16 +102,12 @@ public class PlayerContentProvider extends ContentProvider {
 		case PLAYERS:
 			return Players.CONTENT_TYPE;
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return null;
 		}
 	}
 
 	@Override
 	public Uri insert(Uri uri, ContentValues initialValues) {
-		if (sUriMatcher.match(uri) != PLAYERS) {
-			throw new IllegalArgumentException("Unknown URI " + uri);
-		}
-
 		ContentValues values;
 		if (initialValues != null) {
 			values = new ContentValues(initialValues);
@@ -138,7 +134,7 @@ public class PlayerContentProvider extends ContentProvider {
 			count = db.delete(TABLE_NAME, where, whereArgs);
 			break;
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return -1;
 		}
 		getContext().getContentResolver().notifyChange(uri, null);
 		return count;
@@ -155,7 +151,7 @@ public class PlayerContentProvider extends ContentProvider {
 			break;
 
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return -1;
 		}
 
 		getContext().getContentResolver().notifyChange(uri, null);

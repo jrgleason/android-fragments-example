@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.gleason.apa.R;
+import com.gleason.apa.fragment.BaseListFragment;
 import com.gleason.apa.fragment.team.TeamListFragment;
 import com.gleason.apa.fragment.team.TeamListFragment.OnTeamSelectedListener;
 import com.gleason.apa.model.Player.Players;
@@ -21,7 +22,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-public class PlayerListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor>{
+public class PlayerListFragment extends BaseListFragment implements LoaderManager.LoaderCallbacks<Cursor>{
 	public interface OnPlayerSelectedListener {
         public void onPlayerSelected(Integer id);
     }

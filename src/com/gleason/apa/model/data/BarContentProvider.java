@@ -72,7 +72,7 @@ public class BarContentProvider extends ContentProvider{
 			break;
 
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return null;
 		}
 
 		SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -88,15 +88,14 @@ public class BarContentProvider extends ContentProvider{
 		switch (sUriMatcher.match(uri)) {
 		case BARS:
 			return Bars.CONTENT_TYPE;
-		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
 		}
+		return null;
 	}
 
 	@Override
 	public Uri insert(Uri uri, ContentValues initialValues) {
 		if (sUriMatcher.match(uri) != BARS) {
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return null;
 		}
 
 		ContentValues values;
@@ -127,7 +126,7 @@ public class BarContentProvider extends ContentProvider{
 			count = db.delete(TABLE_NAME, where, whereArgs);
 			break;
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return -1;
 		}
 		getContext().getContentResolver().notifyChange(uri, null);
 		return count;
@@ -144,7 +143,7 @@ public class BarContentProvider extends ContentProvider{
 			break;
 
 		default:
-			throw new IllegalArgumentException("Unknown URI " + uri);
+			return -1;
 		}
 
 		getContext().getContentResolver().notifyChange(uri, null);
