@@ -17,12 +17,13 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class BarEditFragment extends Fragment {
+public class BarEditFragment extends Fragment implements OnFocusChangeListener {
 	public static final String UPDATE_FLAG = "update";
 	public static final String BAR_ID_FLAG = "barid";
 	private EditText name;
@@ -68,6 +69,11 @@ public class BarEditFragment extends Fragment {
 		name = (EditText)root.findViewById(R.id.bar_name);
 		address = (EditText)root.findViewById(R.id.bar_address);
 		Button submit = (Button) root.findViewById(R.id.submitBar);
+		
+		name.setOnFocusChangeListener(this);
+		
+		address.setOnFocusChangeListener(this);
+		
 		if (isEdit != null && isEdit) {
 			Integer barId = activity.getIntent().getExtras().getInt(BAR_ID_FLAG);
 			if (barId == null) {
@@ -111,5 +117,17 @@ public class BarEditFragment extends Fragment {
 		values.put(Bars.ADDRESS, address);
 		Uri uri = getActivity().getContentResolver().insert(Bars.CONTENT_URI, values);
 		Log.d(Util.TAG, uri.toString());
+	}
+
+	public void onFocusChange(View v, boolean hasFocus) {
+		// TODO Auto-generated method stub
+		if(v instanceof EditText){
+			Boolean isTrue = hasFocus;
+			if(isTrue){
+				String test="";
+				((EditText) v).setHint("");
+			}
+		}
+		
 	}
 }

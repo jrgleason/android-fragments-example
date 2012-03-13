@@ -12,12 +12,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bar Name" />
+        
 		<EditText
 		    android:id="@+id/bar_name"
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content"
         	android:inputType="text"
-            android:hint="Name"
+            android:hint="@string/bar_name_hint"
+            android:imeOptions="actionNext"
         	/>
     </LinearLayout>
 
@@ -36,7 +38,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" 
             android:inputType="text"
-            android:hint="Address"/>
+            android:hint="@string/bar_address_hint"/>
     </LinearLayout>
 	<Button
 	    android:id="@+id/submitBar"

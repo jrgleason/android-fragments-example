@@ -4,6 +4,6 @@
     android:layout_height="match_parent">
     <fragment android:id="@+id/edit_container"
               android:layout_height="fill_parent"
-              android:name="com.gleason.apa.fragment.EditActivityContainer"
+              android:name="com.gleason.apa.fragment.bar.BarEditFragment"
               android:layout_width="match_parent" />
 </LinearLayout>

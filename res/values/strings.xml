@@ -3,5 +3,7 @@
     <string name="app_name">ScheduleActivity</string>
     <string name="calander_prompt">Select Calendar To Add</string>
     <string name="bar_tab_text">Bars</string>
+    <string name="bar_name_hint">Bar Name</string>
+    <string name="bar_address_hint">Bar Address</string>
     <color name="white">#FFFFFF</color>
 </resources>

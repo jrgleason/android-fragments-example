@@ -2,8 +2,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <fragment android:id="@+id/bar_container"
+    <fragment android:id="@+id/base_container"
               android:layout_height="fill_parent"
-              android:name="com.gleason.apa.fragment.bar.BarListFragment"
-              android:layout_width="match_parent" />
+              android:name="com.gleason.apa.fragment.BaseFragment"
+              android:layout_width="fill_parent" />
 </LinearLayout>
